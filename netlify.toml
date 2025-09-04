@@ -6,7 +6,10 @@
   NODE_VERSION = "18"
   NEXT_USE_NETLIFY_EDGE = "true"
 
+# Optional: Redirect all unmatched routes to index.html only for SPA pages
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
+  conditions = { Role = "unauthenticated" }
